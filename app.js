@@ -9,7 +9,7 @@ let usuario = {
 function ingresarSistema() {
     let intentos = 3;
     while (intentos > 0) {
-        let ingreso = prompt("Ingrese su clave. Te quedan " + intentos + " intentos (Max. 3).");
+        let ingreso = prompt("Ingrese su clave. Te quedan " + intentos + " intentos (Max. 3). Default Andy: 1234):");
         if (ingreso === usuario.clave) {
         alert("¡Bienvenido, " + usuario.nombre + "!");
         return true;
@@ -18,7 +18,7 @@ function ingresarSistema() {
         alert("Clave incorrecta. Te quedan " + intentos + " intentos.");
         }
     }
-    alert("Demasiados intentos. Tarjeta bloqueada.");
+    alert("Demasiados intentos. Ingreso bloqueado.");
     return false;
 }
 
