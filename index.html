@@ -1,12 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador Cuenta Banco - Saavedra</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Simulador Bancario - Saavedra</title>
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-    <p>Hola Mundo</p>
-    <script src="app.js"></script>
+<main>
+    <h1>Simulador Bancario</h1>
+
+    <!-- Sección Login -->
+    <section id="login-section">
+        <h2>Ingresar</h2>
+        <input type="password" id="claveInput" placeholder="Ingrese su clave" />
+        <button id="btnIngresar">Ingresar</button>
+        <p id="loginMensaje" class="mensaje-error"></p>
+    </section>
+
+    <!-- Sección Panel Bancario -->
+    <section id="panel-section" style="display:none;">
+        <h2>¡Bienvenido <span id="nombreUsuario"></span>!</h2>
+        <p>Saldo actual: $<span id="saldoActual"></span></p>
+
+        <div class="acciones">
+            <input type="number" id="montoInput" placeholder="Monto" />
+            <button id="btnDepositar">Depositar</button>
+            <button id="btnRetirar">Retirar</button>
+        </div>
+
+        <div>
+            <h3>Historial de Movimientos</h3>
+            <ul id="historialLista"></ul>
+        </div>
+
+        <button id="btnTransferencia" disabled title="Próximamente">Transferencias</button>
+        <button id="btnCerrarSesion">Cerrar sesión</button>
+    </section>
+</main>
+
+<script src="js/app.js"></script>
 </body>
 </html>
+
