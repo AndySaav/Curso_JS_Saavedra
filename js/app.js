@@ -27,6 +27,7 @@ let usuario = usuarioGuardado
 // Referencias al DOM
 const loginSection = document.getElementById("login-section");
 const panelSection = document.getElementById("panel-section");
+const usuarioInput = document.getElementById("usuarioInput");
 const claveInput = document.getElementById("claveInput");
 const loginMensaje = document.getElementById("loginMensaje");
 const btnIngresar = document.getElementById("btnIngresar");
@@ -49,21 +50,24 @@ if (usuarioGuardado && localStorage.getItem("logueado") === "true") {
 
 // EVENTO: Ingreso con clave
 btnIngresar.addEventListener("click", () => {
+    const usuarioIngresado = usuarioInput.value.trim().toLowerCase();
     const claveIngresada = claveInput.value;
 
-    if (claveIngresada === usuario.clave) {
+    if (usuarioIngresado === "andy" && claveIngresada === usuario.clave) {
         localStorage.setItem("logueado", "true");
         mostrarPanel();
     } else {
         intentos--;
-        loginMensaje.textContent = `Clave incorrecta. Te quedan ${intentos} intento(s).`;
+        loginMensaje.textContent = `Usuario o clave incorrectos. Te quedan ${intentos} intento(s).`;
         if (intentos <= 0) {
         claveInput.disabled = true;
+        usuarioInput.disabled = true;
         btnIngresar.disabled = true;
         loginMensaje.textContent = "Ingreso bloqueado por intentos fallidos.";
         }
     }
 });
+
 
 // Mostrar panel principal
 function mostrarPanel() {

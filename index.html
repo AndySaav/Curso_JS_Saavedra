@@ -13,8 +13,13 @@
     <!-- Sección Login -->
     <section id="login-section">
         <h2>Ingresar</h2>
-        <input type="password" id="claveInput" placeholder="Ingrese su clave" />
+
+        <input type="text" id="usuarioInput" placeholder="Ingrese su usuario" title="Usuario por defecto: Andy" required />
+
+        <input type="password" id="claveInput" placeholder="Ingrese su clave" title="Clave por defecto: 1234" required />
+
         <button id="btnIngresar">Ingresar</button>
+        
         <p id="loginMensaje" class="mensaje-error"></p>
     </section>
 
